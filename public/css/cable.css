@@ -411,7 +411,73 @@ text-transform: uppercase;
   transition: transform 0.3s ease;
   width: 100%;
 }
+.carousel-btn.style3{
+  position: absolute;
+  top: 100%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  border: none;
+  background-color: #fff;
+  color: black;
+  font-weight: bold;
+  font-size: 1.5rem;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.pricing_row_title.style3{
+  color: #fff;
+line-height: 38px;
+font-size: 32px;
+font-weight: 700;
+text-transform: uppercase;
+}
+.pricing_row_title.style3 {
+  color: #fff;
+line-height: 38px;
+font-size: 32px;
+font-weight: 700;
+text-transform: uppercase;
+}
 
+.pricing-price.style3
+{
+  background: linear-gradient(71deg, #080509, #1a171c, #080509);
+   background-color: #fff;
+
+  box-shadow: 0px 0px 0px 10px #fff;
+color: #fff;
+border-radius: 50%;
+  height: 180px;
+  width: 180px;
+  display: inline-block;
+  padding-top: 46px;
+}
+.gem-orange.style3
+{
+border-radius: 0px;
+  border-color: #fff;
+  color: #fff !important;
+}
+.gem-orange:hover.style3
+{
+  transform: scale(1.2);
+   background-color: #fff;
+  color: rgb(0, 0, 0) !important;
+}
+.pricing-column:hover .pricing-price-wrapper.style3
+{
+    box-shadow: 0px 35px 80px #fff, 0px 0px 0px #fff;
+-webkit-transition: all 0.3s ease-in-out 0s;
+  -moz-transition: all 0.3s ease-in-out 0s;
+  -ms-transition: all 0.3s ease-in-out 0s;
+  -o-transition: all 0.3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
+}
 .pricing-price-wrapper
 {
   background: linear-gradient(71deg, #080509, #1a171c, #080509);

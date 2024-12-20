@@ -364,7 +364,7 @@ border-radius: 0px;
   background: linear-gradient(71deg, #080509, #1a171c, #080509);
   color: #fff;
   padding: 10px;
-  font-size: 28px;
+  font-size: 20px;
   font-weight: bold;
   border-radius: 8px 8px 0 0;
   text-align: center;
@@ -372,7 +372,7 @@ border-radius: 0px;
 }
 
 .scrollable-content {
-  max-height: 450px;
+  max-height: 700px;
   overflow-y: auto;
   border: 1px solid #ccc;
   border-radius: 0 0 8px 8px;
@@ -402,6 +402,10 @@ table th, table td {
   padding: 12px;
   text-align: center;
   border: 1px solid #ddd;
+  
+}
+table td{
+  font-size:1.2rem;
 }
 table tbody tr{
   /* background: linear-gradient(71deg, #080509, #282728, #625e62); */
@@ -418,8 +422,8 @@ table tbody tr{
   vertical-align: middle;
 } */
 table td img {
-  width: 75px; /* Increase size */
-  height: 75px; /* Make height same as width to keep it round */
+  width: 50px; /* Increase size */
+  height:50px; /* Make height same as width to keep it round */
   border-radius: 50%; /* Make the image round */
   margin-right: 10px;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.816);
@@ -450,11 +454,19 @@ table tbody tr:hover {
 }
 
 /* Footer Styling */
+.footer2 {
+display: block;
+justify-content: center;
+padding-bottom:2%;
+background-color: #0c0c0c;
+color: #ffffff;
+text-align: center;
+}
 .footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 40px 20px;
+  padding: 20px 20px;
   background-color: #0c0c0c;
   color: #ffffff;
   text-align: center;

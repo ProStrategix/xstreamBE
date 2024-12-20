@@ -3,11 +3,19 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 40px 20px;
+    padding: 20px 20px;
     background-color: #0c0c0c;
     color: #ffffff;
     text-align: center;
 }
+.footer2 {
+    display: block;
+    justify-content: center;
+    padding-bottom:2%;
+    background-color: #0c0c0c;
+    color: #ffffff;
+    text-align: center;
+  }
 /* Logo in Footer */
 .footer-logo {
     display: flex;
