@@ -1,0 +1,79 @@
+/* Footer Styling */
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 20px;
+    background-color: #0c0c0c;
+    color: #ffffff;
+    text-align: center;
+}
+/* Logo in Footer */
+.footer-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-logo-image {
+    max-width: 150px; /* Adjust size */
+    height: auto;
+    transition: transform 0.3s ease-in-out;
+}
+
+.footer-logo-image:hover {
+    transform: scale(1.1); /* Slight zoom on hover */
+}
+
+/* Footer Text */
+.footer p {
+    font-size: 14px;
+    margin: 0;
+    opacity: 0.8;
+}
+
+/* Social Icons */
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icon {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+.social-icon:hover {
+    color: #ffa039;
+}
+
+
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .footer-logo-image {
+        max-width: 120px;
+    }
+    .footer {
+        
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-logo-image {
+        max-width: 100px;
+    }
+    .footer {
+        
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+
+
+  

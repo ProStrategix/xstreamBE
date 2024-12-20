@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+    {{> (lookup . 'css')}}
+    <link rel="stylesheet" href="../../public/css/nav.css">
+    <link rel="stylesheet" href="../../public/css/footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="images/favicon.ico" rel="shortcut icon" type="image/x-icon">
+    <link href="images/webclip.png" rel="apple-touch-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.css" />
+</head>
+<body>
+    {{!-- Navbar --}}
+    {{> navbar}}
+    {{{body}}}
+    {{> footer}}
+   
+    
+    {{!-- Footer --}}
+   
+
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+    <script src="../../public/js/nav.js"></script>
+     {{> (lookup . 'partial') }}
+</body>
+</html>

@@ -1,0 +1,150 @@
+<section class="features" data-aos="fade-down" data-aos-delay="200" data-aos-duration="900">
+        
+        <div class="main-feature" >
+            <div class="heading-container">
+                <h1>XSTream <span style="color: #ffa039;">Cable Channels</span></h1>
+                <p>Provides an overview of the channels offered by Xstream. Not all channels are accessible to all.
+                    The chart below helps to identify which are available in each plan.  <span style="color: #ffa039;">Please note.</span> Only Preferred and Expanded subscribers have the option to upgrade their package with one or more of our premium(eg:HBO). 
+                    This is not available to our OP Basic subscribers.</p>
+            </div>
+            
+        
+            <div class="container">
+       
+       
+        <div class="pricing">
+            <div class="pricing-option lifeline">
+                <p class="plan">OP Basic</p>
+                <p><span class="old-price">$80/mo</span> <span class="new-price">$59.95</span></p>
+            </div>
+            <div class="pricing-option lifeline">
+                <p class="plan">Choice</p>
+                <p><span class="old-price">$80/mo</span> <span class="new-price">$59.95</span></p>
+            </div>
+            <div class="pricing-option basic">
+                <p class="plan">Preferred</p>
+                <p><span class="old-price">$100/mo</span> <span class="new-price">$79.95</span></p>
+            </div>
+            <div class="pricing-option basic">
+                <p class="plan">Expanded</p>
+                <p><span class="old-price">+$30/mo</span> <span class="new-price">+$20.95</span></p>
+            </div>
+        </div>
+
+
+        <div class="containers">
+            <!-- Collapsible Header -->
+            <div class="collapsible-header" onclick="toggleContainer()">
+                <span >Chart to Compare Plans</span>
+                <span id="toggle-icon" class="icon"> &#8595;</span>
+            </div>
+    
+            <div class="plan-container collapsible-content">
+                <!-- Basic Plan -->
+                <div class="plan plan-basic">
+                    <div class="plan-title">Basic Plan</div>
+                    <div class="inheritance-label">Includes 18 Channels</div>
+                </div>
+    
+                <!-- Choice Plan with Basic Plan inside -->
+                <div class="plan plan-choice">
+                    <div class="plan-title">Choice Plan</div>
+                    <div class="plan plan-basic">
+                        <div class="plan-title">Basic Plan</div>
+                    </div>
+                </div>
+    
+                <!-- Preferred Plan with Choice Plan inside -->
+                <div class="plan plan-preferred">
+                    <div class="plan-title">Preferred Plan</div>
+                    <div class="plan plan-choice">
+                        <div class="plan-title">Choice Plan</div>
+                    </div>
+                    <button class="add-premium-button">Add Premium</button>
+                </div>
+    
+                <!-- Expanded Plan with Choice and Preferred Plans inside -->
+                <div class="plan plan-expanded">
+                    <div class="plan-title">Expanded Plan</div>
+                    <div class="plan plan-choice">
+                        <div class="plan-title">Choice Plan</div>
+                    </div>
+                    <div class="plan plan-preferred">
+                        <div class="plan-title">Preferred Plan</div>
+                    </div>
+                    <button class="add-premium-button">Add Premium</button>
+                </div>
+    
+            </div>
+    
+            <div class="premium-note">
+                <span>Note:</span> Premium Plan can only be added to the Preferred or Expanded Plan.
+            </div>
+        </div>
+
+
+
+        <div class="channel-table">
+            <div class="channel-header">
+                <p>Only on Xstream TV Stream
+
+                    <a href=".../../public/images/channel.pdf" class="button" download style="color: #fff;"><i class="fa fa-download"></i></a>
+                </p>
+                
+            </div>
+            <div class="scrollable-content">
+                <table id="channelTable">
+                    <thead>
+                        <tr>
+                            <th style="background-color: #f9f9f9;" >Channel</th>
+                            <th style="background-color: #f9f9f9;">Numbers</th>
+                            <th style="background-color: #ffa039;" class="toggle" data-target="opbasic-row">OP Basic <i class="fa-regular fa-hand-point-left"></i></th>
+                            <th style="background-color: #ffa039;" class="toggle" data-target="choice-row">Choice <i class="fa-regular fa-hand-point-left"></i></th>
+                            <th style="background-color: #069bd0;" class="toggle" data-target="preferred-row">Preferred <i class="fa-regular fa-hand-point-left"></i></th>
+                            <th style="background-color: #069bd0;" class="toggle" data-target="expanded-row">Expanded <i class="fa-regular fa-hand-point-left"></i></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- <tr>
+                            <td><img src="/Xstream-Staging-main/images/channel/disney.jpeg" alt="Disney Channel"></td>
+                            <td>✔</td>
+                            <td>—</td>
+                            <td>✔</td>
+                        </tr>
+                        <tr>
+                            <td><img src="/Xstream-Staging-main/images/channel/cartoon_network.png" alt="ESPN"></td>
+                            <td>✔</td>
+                            <td>—</td>
+                            <td>✔</td>
+                        </tr>
+                        <tr>
+                            <td><img src="/Xstream-Staging-main/images/channel/comedy_central.png" alt="ESPN 4K"></td>
+                            <td>✔</td>
+                            <td>—</td>
+                            <td>✔</td>
+                        </tr>
+                        <tr>
+                            <td><img src="/Xstream-Staging-main/images/channel/cartoon_network.png" alt="ESPN"></td>
+                            <td>✔</td>
+                            <td>—</td>
+                            <td>✔</td>
+                        </tr> -->
+                    </tbody>
+                </table>
+                
+            </div>
+        </div>
+    </div>
+              
+
+       
+    
+              
+            
+               
+            
+    
+        </div>
+        
+        
+    </section>

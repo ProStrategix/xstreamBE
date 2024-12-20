@@ -1,0 +1,7 @@
+{
+    "mongoConfig": {
+      
+      "serverUrl": "mongodb+srv://xstream-user:AMpuFLlsLfzz0SEc@xstream.36ipo.mongodb.net/?retryWrites=true&w=majority&appName=Xstream",
+    "database": "Xstream"
+    }
+  }

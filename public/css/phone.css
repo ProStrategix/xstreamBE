@@ -1,0 +1,190 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   
+}
+:root {
+    --button-background: dodgerblue;
+    --button-color: white;
+    
+    --dropdown-highlight: dodgerblue;
+    --dropdown-width: 160px;
+    --dropdown-background: white;
+    --dropdown-color: black;
+  }
+body {
+    background-color: #121212; /* Dark background */
+    color: #e0e0e0; /* Light text for contrast */
+    background: linear-gradient(135deg, #393838, #555, #ffa039);
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+
+  .features {
+    background-color: #121212;
+    margin: 0 auto;
+   
+}
+.main-feature{
+
+    padding: 10%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.heading-container{
+    margin-top: -4%;
+}
+.heading-container h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-align: center; 
+    color: #eee1e1;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+.heading-container p {
+    font-size: 1.8rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-align: center; 
+    color: #605d5d;
+    margin-bottom: 10px;
+}
+
+  
+
+  
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .main-feature{
+        width: 100%;
+        position: relative;
+        padding: 10%;
+    }
+    
+}
+@media only screen and (max-width: 639px) {
+    .main-feature{
+        width: 100%;
+        position: relative;
+    }
+   
+  }
+@media only screen and (max-width: 979px) {
+    
+   
+    .main-feature{
+        width: 100%;
+        position: relative;
+        padding: 10%;
+    }
+    
+  }
+
+
+
+.gradient-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    padding-top:5%;
+  }
+
+  .container-title {
+    text-align: center;
+    padding: 0 !important;
+    margin-bottom: 40px;
+    font-size: 40px;
+    color: #fff;
+    font-weight: 600;
+    line-height: 60px;
+  }
+  
+  .card {
+    max-width: 550px;
+    border: 0;
+    width: 100%;
+    margin-inline: auto;
+    color: #000;
+  }
+  
+  .container-card {
+    position: relative;
+    border: 2px solid transparent;
+    background: linear-gradient(1deg, #555,#555, #FFC200);
+    /* background: linear-gradient(71deg, #080509, #1a171cf0, #080509); */
+    /* background-color: rgba(10, 9, 9, 0.873); */
+    background-clip: padding-box;
+    border-radius: 45px;
+    padding: 40px;
+    height: 100%;
+   
+  }
+  
+  .container-card i {
+    font-size: 42px;
+    margin-bottom: 32px;
+    color: #ffffff;
+  }
+  
+  .bg-orange-box {
+    position: relative;
+  }
+  
+  .bg-orange-box::after
+  {
+    position: absolute;
+    top: -1px;
+    bottom: -1px;
+    left: -1px;
+    right: -1px;
+    content: "";
+    z-index: -1;
+    border-radius: 45px;
+  }
+  
+
+  .bg-orange-box::after {
+    background: linear-gradient(71deg, #110e0e, #FFC200, #110e0e);
+  }
+
+  .card-title {
+    font-weight: 600;
+    color: rgb(255, 255, 255);
+    letter-spacing: -0.02em;
+    line-height: 40px;
+    font-style: normal;
+    font-size: 28px;
+    padding-bottom: 8px;
+  }
+  
+  .card-description {
+    font-weight: 600;
+    line-height: 32px;
+    color: rgb(255, 255, 255);
+    font-size: 18px;
+    max-width: 470px;
+
+  }
+
+ 
+  @media screen and (max-width: 1152px) {
+    .gradient-cards {
+        grid-template-columns: 1fr !important;
+      }
+   
+  }
+  @media screen and (max-width: 991px) {
+
+    .gradient-cards {
+        grid-template-columns: 1fr;
+      }
+  }
+  

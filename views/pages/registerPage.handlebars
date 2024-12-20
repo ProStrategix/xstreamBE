@@ -1,0 +1,130 @@
+
+    
+      <section class="features" data-aos="fade-down" data-aos-delay="200" data-aos-duration="900">
+        
+        <div class="main-feature" >
+            
+            <div class="stepper-wrapper">
+                <div class="stepper-item active">
+                  <div class="step-counter">1</div>
+                  <div class="step-name" onclick="location.href='getstarted.html';">Sign In / Register</div>
+                </div>
+                <div class="stepper-item ">
+                  <div class="step-counter">2</div>
+                  <div class="step-name" onclick="location.href='addservices.html';">Select Services</div>
+                </div>
+                <div class="stepper-item">
+                  <div class="step-counter">3</div>
+                  <div class="step-name"  onclick="location.href='payment-checkout.html';">Checkout</div>
+                </div>
+            </div>
+           
+            
+            <div class="container">
+                       
+            <div class="wrapper">
+                <div class="title-text">
+                   <div class="title login">
+                    Sign In
+                   </div>
+                   <div class="title signup">
+                    Register
+                   </div>
+                </div>
+                <div class="form-container">
+                   <div class="slide-controls">
+                      <input type="radio" name="slide" id="login"checked >
+                      <input type="radio" name="slide" id="signup" >
+                      <label for="login" class="slide login">Sign In</label>
+                      <label for="signup" class="slide signup">Register</label>
+                      <div class="slider-tab"></div>
+                     
+                   </div>
+                   <div class="form-inner">
+                      <form action="/login" class="login" method="POST">
+                         <div class="field">
+                            <input type="text" placeholder="Email Address" name="Email" required>
+                         </div>
+                         <div class="field">
+                            <input type="password" placeholder="Password" name="Password" required>
+                         </div>
+                         <div class="pass-link">
+                            <a href="#">Forgot password?</a>
+                         </div>
+                         <div class="field btn">
+                            <div class="btn-layer"></div>
+                            <input type="submit" value="Login">
+                         </div>
+                         <div class="signup-link">
+                            Not a member? <a href="">Register now</a>
+                         </div>
+                         <div class="signup-link">
+                            New customers age 18+ only. <br>
+                            See privacy policy and terms of use.
+                         </div>
+                      </form>
+                      <form action="/register" method="POST" class="signup">
+                        {{#if hasErrors}}
+                              <p class="error">{{error}}</p>
+                            {{/if}}
+                        <div class="container-1">
+                          
+                            <div class="field">
+                              <input type="text" placeholder="First Name" name="FirstName" required>
+                            </div>
+                            <div class="field">
+                              <input type="text" placeholder="Last Name" name="LastName" required>
+                            </div>
+                          </div>
+                           <div class="container-1">
+                               <div class="field">
+                                 <input type="number" placeholder="Apt/Unit" name="AptNo" required>
+                              </div>
+                               <div class="field">
+                                 <input type="text" placeholder="Full Street Address" name="Street" required>
+                              </div>
+                           </div>
+                        
+                         <div class="container-2">
+                            <div class="field">
+                              <input type="text" placeholder="City" name="City" required>
+                            </div>
+                            <div class="field">
+                              <input type="text" placeholder="State" name="State" required>
+                            </div>
+                            <div class="field">
+                                <input type="number" placeholder="Zipcode" name="Zip" required>
+                              </div>
+                          </div>
+                          <div class="container-1">
+                            <div class="field">
+                              <input type="email" placeholder="Email" name="Email" required>
+                            </div>
+                            <div class="field">
+                                <input type="password" placeholder="Password" name="Password" required>
+                             </div>
+                          </div>
+                         
+                         
+                         <div class="field btn">
+                            <div class="btn-layer"></div>
+                            <input type="submit" value="Signup">
+                         </div>
+                         <div class="signup-link">
+                            New customers age 18+ only.
+                            See privacy policy and terms of use.
+                         </div>
+                      </form>
+                   </div>
+                </div>
+             </div>
+              
+            </div>
+               
+            
+    
+        </div>
+        
+        
+    </section>
+    

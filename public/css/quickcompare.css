@@ -1,0 +1,207 @@
+
+
+.containers {
+    /* max-width: 900px; */
+    margin: auto;
+    background: #000;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 30px;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    max-height: 120px; /* Initial visible state */
+    
+}
+.collapsible-header {
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 10px;
+    /* border: 2px solid #ddd; */
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+}
+
+.collapsible-header:hover {
+    background-color: #2e2d2d7d;
+}
+
+.collapsible-header span {
+    font-size: 24px;
+    transition: transform 0.3s ease;
+}
+
+.collapsible-content {
+    padding: 20px;
+    display: none;
+    transition: max-height 0.3s ease-out;
+    overflow: hidden;
+}
+
+h1 {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.plan-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.plan-container .plan {
+    flex: 1;
+    min-width: 150px;
+    /* border: 2px solid #ddd; */
+    border-radius: 10px;
+    padding: 20px;
+    position: relative;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.plan-container .plan:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.plan-basic {
+    background: #ffa039;
+    margin-top: 10px;
+}
+
+.plan-choice {
+    background: #ffa039;
+    position: relative;
+    padding-top: 40px;
+}
+
+.plan-preferred {
+    background: #0694bd;
+    position: relative;
+    padding-top: 40px;
+}
+
+.plan-expanded {
+    background: #0694bd;
+    position: relative;
+    padding-top: 60px;
+}
+
+.plan-premium {
+    background: #ffcdd2;
+    border: 2px dashed #d32f2f;
+}
+
+.plan-title {
+    font-size: 22px;
+    font-weight: bolder;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.icon {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.add-premium-button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #060606;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.add-premium-button:hover {
+    transform: scale(1.04);
+}
+
+.plan-preferred .add-premium-button,
+.plan-expanded .add-premium-button {
+    display: block;
+}
+
+.plan-choice .basic-new-button {
+    display: block;
+}
+
+.premium-note {
+    margin-top: 30px;
+    padding: 15px;
+    background-color: #ffecb3;
+    border-left: 4px solid #ffa000;
+    border-radius: 10px;
+    font-size: 14px;
+    color: #795548;
+}
+
+.premium-note span {
+    font-weight: bold;
+    color: #d32f2f;
+}
+
+.inheritance-label {
+    font-size: 15px;
+    color: #555;
+    margin-top: 5px;
+}
+
+/* Nested Basic Plan inside Choice Plan */
+.plan-choice .plan-basic {
+    margin-top: 20px;
+    padding: 15px;
+    border: 2px dashed #a15402;
+    background: #ffa039;
+    width: 90%;
+    z-index: 1;
+}
+
+/* Nested Choice Plan inside Preferred Plan */
+.plan-preferred .plan-choice {
+    margin-top: 20px;
+    padding: 15px;
+    border: 2px dashed #a15402;
+    background: #ffa039;
+    width: 90%;
+    z-index: 1;
+}
+
+/* Nested Preferred Plan inside Expanded Plan */
+.plan-expanded .plan-preferred {
+    margin-top: 20px;
+    padding: 15px;
+    border: 2px dashed #b4a415;
+    background: #0694bd;
+    width: 90%;
+    z-index: 1;
+}
+.plan-expanded .plan-choice {
+    margin-top: 20px;
+    padding: 15px;
+    border: 2px dashed #a15402;
+    background: #ffa039;
+    width: 90%;
+    z-index: 1;
+}
+.collapsible-header .icon {
+   font-size: 2rem;
+    transition: transform 0.3s ease;
+}

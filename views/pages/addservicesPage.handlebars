@@ -1,0 +1,463 @@
+<section class="features" data-aos="fade-down" data-aos-delay="200" data-aos-duration="900">
+        
+        <div class="main-feature" >
+            
+            <div class="stepper-wrapper">
+                <div class="stepper-item completed">
+                  <div class="step-counter">1</div>
+                  <div class="step-name" onclick="location.href='getstarted.html';">Sign In / Register</div>
+                </div>
+                <div class="stepper-item active">
+                  <div class="step-counter">2</div>
+                  <div class="step-name" onclick="location.href='addservices.html';">Select Services</div>
+                </div>
+                <div class="stepper-item">
+                  <div class="step-counter">3</div>
+                  <div class="step-name" onclick="location.href='payment-checkout.html';">Checkout</div>
+                </div>
+            </div>
+            {{!-- {{#if hasErrors}}
+            <div>{{error}}</div>
+            {{/if}} --}}
+           {{#if data}}
+            <div class="pricing-container">
+                {{#if data.basic}}
+                <div class="pricing-column-wrapper">
+                    <div class="pricing-column">
+                        <div class="pricing-price-row">
+                        <div class="pricing-price-wrapper">
+                            <div class="pricing-price">
+                            <div class="pricing-cost">${{data.basic.Price}}</div>
+                            <div class="time" style="display:inline-block;">Per Month</div>
+                            </div>
+                        </div>
+                        </div>
+                        <div class="pricing-row-title">
+                            <div class="pricing_row_title">{{data.basic.Name}}</div>
+                        </div>
+                        <div class="logo-carousel">
+                            <div class="logo-track-op-basic">
+                                
+                                <!-- <div class="logo-slide">
+                                    <img src="images/channel/espn.png" alt="ESPN">
+                                </div> -->
+                            
+                            </div>
+                            <div class="dots-container-op-basic">
+                                <button class="carousel-btn left-btn"><i class="fa fa-chevron-circle-left" aria-hidden="true"></i></button>
+                                <!-- <span class="dot" data-slide="0"></span> -->
+                                <button class="carousel-btn right-btn"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i></button>
+                            </div>
+                        </div>
+                        <figure class="pricing-row">87 channels</figure>
+                        <figure class="pricing-row">Dedicated Support</figure>
+                        <figure class="pricing-row">Mobile App</figure>
+                        <figure class="pricing-row strike">DVR Not Included</figure>
+                        <div class="pricing-footer">
+                        <div class="gem-button-container gem-button-position-center">
+                            {{#if data.basic.purchased}}
+                            <a  class="gem-button gem-orange " id="servicebtn" value={{data.basic.id}}>Remove Plan</a>
+                            {{else}}
+                            <a  class="gem-button gem-orange " id="servicebtn" value={{data.basic.id}}>Add Plan</a>
+                            {{/if}}
+                        </div>
+                        </div>
+                    </div>
+                </div>
+                {{/if}}
+
+                {{#if data.choice}}
+                <div class="pricing-column-wrapper">
+                    <div class="pricing-column">
+                        <div class="pricing-price-row">
+                        <div class="pricing-price-wrapper">
+                            <div class="pricing-price">
+                            <div class="pricing-cost">${{data.choice.Price}}</div>
+                            <div class="time" style="display:inline-block;">Per Month</div>
+                            </div>
+                        </div>
+                        </div>
+                        <div class="pricing-row-title">
+                        <div class="pricing_row_title">{{data.choice.Name}}</div>
+                        </div>
+                        <div class="logo-carousel3">
+                            <div class="logo-track-choice">
+                                
+                                <!-- <div class="logo-slide">
+                                    <img src="images/channel/espn.png" alt="ESPN">
+                                </div> -->
+                            
+                            </div>
+                            <div class="dots-container-choice">
+                                <button class="carousel-btn left-btn3"><i class="fa fa-chevron-circle-left" aria-hidden="true"></i></button>
+                                <!-- <span class="dot" data-slide="0"></span> -->
+                                <button class="carousel-btn right-btn3"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i></button>
+                            </div>
+                        </div>
+                        <figure class="pricing-row">Additional 56 channels</figure>
+                        <figure class="pricing-row">Dedicated Support</figure>
+                        <figure class="pricing-row">Mobile App</figure>
+                        <figure class="pricing-row strike">DVR Not Included</figure>
+                        <div class="pricing-footer">
+                        <div class="gem-button-container gem-button-position-center">
+                            {{#if data.choice.purchased}}
+                            <a  class="gem-button gem-orange " id="servicebtn2" value={{data.choice.id}}>Remove Plan</a>
+                            {{else}}
+                            <a  class="gem-button gem-orange " id="servicebtn2" value={{data.choice.id}}>Add Plan</a>
+                            {{/if}}
+                        </div>
+                        </div>
+                    </div>
+                </div>
+              
+            {{/if}}
+            {{#if data.preferred}}
+                <div class="pricing-column-wrapper style2">
+                    <div class="pricing-column style2">
+                        <!-- <div class="pricing-price-row"> -->
+                        <div class="pricing-price-wrapper style2">
+                            <div class="pricing-price style2">
+                            <div class="pricing-cost style2">${{data.preferred.Price}}</div>
+                            <div class="time style2" style="display:inline-block;">Per Month</div>
+                            </div>
+                        </div>
+                        <!-- </div> -->
+                        <div class="pricing-row-title style2">
+                        <div class="pricing_row_title style2">{{data.preferred.Name}}</div>
+                        </div>
+                        <!-- Scrollable logo carousel with dots -->
+                        <div class="logo-carousel2">
+                            <div class="logo-track-preferred">
+                                
+                                <!-- <div class="logo-slide">
+                                    <img src="images/channel/espn.png" alt="ESPN">
+                                </div> -->
+                            
+                            </div>
+                            <div class="dots-container-preferred">
+                                <button class="carousel-btn2 left-btn2"><i class="fa fa-chevron-circle-left" aria-hidden="true"></i></button>
+                                <button class="carousel-btn2 right-btn2"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i></button>
+                            </div>
+                        </div>
+
+                        <figure class="pricing-row style2">Additional 68 channels</figure>
+                        <figure class="pricing-row style2">Dedicated Support</figure>
+                        <figure class="pricing-row style2">25 hours of Cloud DVR</figure>
+                        <figure class="pricing-row style2">Mobile App</figure>
+                        <!-- <div class="pricing-footer"> -->
+                        <div class="gem-button-position-center style2">
+                            {{#if data.preferred.purchased}}
+                            <a  class="gem-button gem-orange style2 " id="preferredplan" value={{data.preferred.id}}>Remove Plan</a>
+                            {{else}}
+                            <a  class="gem-button gem-orange style2 " id="preferredplan" value={{data.preferred.id}}>Add Plan</a>
+                            {{/if}}
+                        </div>
+                        <!-- </div> -->
+                    </div>
+                </div>
+{{/if}}
+{{#if data.expanded}}
+                <div class="pricing-column-wrapper style2">
+                    <div class="pricing-column style2" >
+                        <div class="pricing-price-row style2">
+                        <div class="pricing-price-wrapper style2">
+                            <div class="pricing-price style2">
+                            <div class="pricing-cost">${{data.expanded.Price}}</div>
+                            <div class="time" style="display:inline-block;">Per Month</div>
+                            </div>
+                        </div>
+                        </div>
+                        <div class="pricing-row-title style2">
+                        <div class="pricing_row_title style2">{{data.expanded.Name}}</div>
+                        </div>
+                        <div class="logo-carousel4">
+                            <div class="logo-track-expanded">
+                                
+                                <!-- <div class="logo-slide">
+                                    <img src="images/channel/espn.png" alt="ESPN">
+                                </div> -->
+                            
+                            </div>
+                            <div class="dots-container-expanded style2">
+                                <button class="carousel-btn2 left-btn4"><i class="fa fa-chevron-circle-left" aria-hidden="true"></i></button>
+                                <!-- <span class="dot" data-slide="0"></span> -->
+                                <button class="carousel-btn2 right-btn4"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i></button>
+                            </div>
+                        </div>
+                        <figure class="pricing-row  style2">41 channels</figure>
+                        <figure class="pricing-row style2">Dedicated Support</figure>
+                        <figure class="pricing-row style2">Mobile App</figure>
+                        <figure class="pricing-row strike">DVR Not Included</figure>
+                        <div class="pricing-footer">
+                        <div class="gem-button-container gem-button-position-center style2">
+                           {{#if data.expanded.purchased}}
+                            <a  class="gem-button gem-orange style2" id="expandedplan" value={{data.expanded.id}}>Remove Plan</a>
+                            {{else}}
+                            <a  class="gem-button gem-orange style2" id="expandedplan" value={{data.expanded.id}}>Add Plan</a>
+                            {{/if}}
+                        </div>
+                        </div>
+                    </div>
+                </div>
+               {{/if}}
+          
+        </div>
+        {{/if}}
+        
+    </section>
+    <section class="features1 " id="subplans" hidden data-aos="fade-down" data-aos-delay="200" data-aos-duration="900">
+        
+      <div class="main-feature" >
+          <div class="heading-container">
+              <h1>Popular Premium Packages Offer Something for<span style="color: #069bd9;"> Everyone </span></h1>
+              <p>Access to these upgrades requires a Basic subscription.  
+                  These member can select one or more options based on their interests.</p>
+          </div>
+          {{#if data}}
+          <div class="gradient-cards2">
+
+        {{#if data.sports}}
+
+          <article class="plan [ card-plan ] Sports">
+              <div class="inner">
+      
+                  <span class="pricing Sports">
+                      <span>
+                          +${{data.sports.Price}} <small>/ m</small>
+                      </span>
+                  </span>
+                  <h2 class="title">{{data.sports.Name}}</h2>
+                  <p class="info">This is the upgrade plan for those who have a basic plan already running.</p>
+                  <ul class="features">
+                      <li>
+                          <span class="icon">
+                              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                                  <path fill="none" d="M0 0h24v24H0z" />
+                                  <path d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z" fill="currentColor" />
+                              </svg>
+                          </span>
+                          <span>Additional <strong>12</strong> channels</span>
+                      </li>
+                      <li>
+                          <span class="icon">
+                              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                                  <path fill="none" d="M0 0h24v24H0z" />
+                                  <path d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z" fill="currentColor" />
+                              </svg>
+                          </span>
+                          <span>Dedicated Support</span>
+                      </li>
+                     
+                      <li>
+                              <!-- <span class="icon">
+                                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                                      <path fill="none" d="M0 0h24v24H0z" />
+                                      <path d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z" fill="currentColor" />
+                                  </svg>
+                              </span> -->
+                              <span class="strike">No additional DVR hrs. beyond Basic</span>
+                      </li>
+                      <li>
+                          <span class="icon">
+                              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                                  <path fill="none" d="M0 0h24v24H0z" />
+                                  <path d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z" fill="currentColor" />
+                              </svg>
+                          </span>
+                          <span>Mobile App</span>
+                      </li>
+                  </ul>
+                  {{#if data.sports.purchased}}
+                  <button class="button Sports" id="sportsbtn" value={{data.sports.id}}>Remove Sports</button>
+                  {{else}}
+                  <button class="button Sports" id="sportsbtn" value={{data.sports.id}}>Add Sports</button>
+                  {{/if}}
+              </div>
+          </article>
+{{/if}}
+{{#if data.hbo}}
+          <article class="plan [ card-plan ] HBO">
+              <div class="inner">
+      
+                  <span class="pricing HBO">
+                      <span>
+                          +${{data.hbo.Price}} <small>/ m</small>
+                      </span>
+                  </span>
+                  <h2 class="title">{{data.hbo.Name}}</h2>
+                  <p class="info">This is the upgrade plan for those who have a basic plan already running.</p>
+                  <ul class="features">
+                      <li>
+                          <span class="icon">
+                              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                                  <path fill="none" d="M0 0h24v24H0z" />
+                                  <path d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z" fill="currentColor" />
+                              </svg>
+                          </span>
+                          <span><strong>6</strong> channels</span>
+                      </li>
+                      <li>
+                          <span class="icon">
+                              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                                  <path fill="none" d="M0 0h24v24H0z" />
+                                  <path d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z" fill="currentColor" />
+                              </svg>
+                          </span>
+                          <span>Dedicated Support</span>
+                      </li>
+                     
+                      <li>
+                              <!-- <span class="icon">
+                                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                                      <path fill="none" d="M0 0h24v24H0z" />
+                                      <path d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z" fill="currentColor" />
+                                  </svg>
+                              </span> -->
+                              <span class="strike">No additional DVR hrs. beyond Basic</span>
+                      </li>
+                      <li>
+                          <span class="icon">
+                              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                                  <path fill="none" d="M0 0h24v24H0z" />
+                                  <path d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z" fill="currentColor" />
+                              </svg>
+                          </span>
+                          <span>Mobile App</span>
+                      </li>
+                  </ul>
+                  {{#if data.hbo.purchased}}
+                  <button class="button HBO" id="hbobtn" value={{data.hbo.id}}>Remove HBO</button>
+                  {{else}}
+                  <button class="button HBO" id="hbobtn" value={{data.hbo.id}}>Add HBO</button>
+                  {{/if}}
+              </div>
+          </article>
+{{/if}}
+{{#if data.spanish}}
+          <article class="plan [ card-plan ] Cinemax">
+              <div class="inner">
+      
+                  <span class="pricing Cinemax">
+                      <span>
+                          +${{data.spanish.Price}} <small>/ m</small>
+                      </span>
+                  </span>
+                  <h2 class="title">{{data.spanish.Name}}</h2>
+                  <p class="info">This is the upgrade plan for those who have a basic plan already running.</p>
+                  <ul class="features">
+                      <li class="sub-li">
+                          <span class="icon">
+                              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                                  <path fill="none" d="M0 0h24v24H0z" />
+                                  <path d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z" fill="currentColor" />
+                              </svg>
+                          </span>
+                          <span><strong>4</strong> channels</span>
+                      </li>
+                      <li class="sub-li">
+                          <span class="icon">
+                              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                                  <path fill="none" d="M0 0h24v24H0z" />
+                                  <path d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z" fill="currentColor" />
+                              </svg>
+                          </span>
+                          <span>Dedicated Support</span>
+                      </li>
+                     
+                      <li class="sub-li">
+                              <!-- <span class="icon">
+                                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                                      <path fill="none" d="M0 0h24v24H0z" />
+                                      <path d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z" fill="currentColor" />
+                                  </svg>
+                              </span> -->
+                              <span class="strike">No additional DVR hrs. beyond Basic</span>
+                      </li>
+                      <li class="sub-li">
+                          <span class="icon">
+                              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                                  <path fill="none" d="M0 0h24v24H0z" />
+                                  <path d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z" fill="currentColor" />
+                              </svg>
+                          </span>
+                          <span>Mobile App</span>
+                      </li>
+                  </ul>
+                  {{#if data.spanish.purchased}}
+                  <button class="button Cinemax" id="spanishbtn" value={{data.spanish.id}}>Remove Spanish</button>
+                  {{else}}
+                  <button class="button Cinemax" id="spanishbtn" value={{data.spanish.id}}>Add Spanish</button>
+                  {{/if}}
+              </div>
+          </article>
+{{/if}}
+
+      </div>    
+  {{/if}}
+      </div>
+      
+      
+  </section>
+    <section class="features" >
+        
+        <div class="main-feature" >
+            
+            <div class="heading-container">
+                <h1>Xstream <span style="color: #ffa039;">Internet & phone</span></h1>
+                <p>Affordable plans for up to 100MB/s plus unlimited calls to the US, Canada, and Puerto Rico</p>
+            </div>
+                
+            <div class="card-container">
+                <!-- Internet Plan Card -->
+                <div class="card">
+                  <h3 class="card-title">Add Lightning-Fast Internet</h3>
+                  <div class="card-content">
+                    <p>
+                      Our lightweight technology makes the most of every MB. Choose from flexible internet plans that suit your needs!
+                    </p>
+                    <div class="speed-options">
+                      <button>
+                        <input type="radio" name="internet" id="plan1">
+                        25 MB
+                        <label for="plan1" class="plan-label">$41.95/mo</label>
+                      </button>
+                      <button>
+                        <input type="radio" name="internet" id="plan2">
+                        50 MB
+                        <label for="plan1" class="plan-label">$61.95/mo</label>
+                      </button>
+                      <button>
+                        <input type="radio" name="internet" id="plan2">
+                        100 MB
+                        <label for="plan1" class="plan-label">$91.95/mo</label>
+                      </button>
+                      <!-- <button><input type="radio" name="internet" id="plan2">50 MB</button>
+                      <button><input type="radio" name="internet" id="plan3">100 MB</button> -->
+                    </div>
+                    <!-- <ul class="price-options">
+                      <li><input type="radio" name="internet" id="plan1"><label for="plan1">25 MB - $41.95/mo</label></li>
+                      <li><input type="radio" name="internet" id="plan2"><label for="plan2">50 MB - $61.95/mo</label></li>
+                      <li><input type="radio" name="internet" id="plan3"><label for="plan3">100 MB - $91.95/mo</label></li>
+                    </ul> -->
+                    <button class="primary-button" id="internetbtn">Add Internet</button>
+                  </div>
+                </div>
+          
+                <!-- Phone Plan Card -->
+                <div class="card">
+                  <h3 class="card-title">Add Crystal-Clear Calls</h3>
+                  <div class="card-content">
+                    <p>
+                      Add a phone line for only <span style="color: #ffa039;">$29.99/mo.</span> Includes free calls to the US, Canada, and Puerto Rico.
+                    </p>
+                    <!-- <img src="images/icons8-voip.svg" alt="Phone Icon" class="icon"> -->
+                    <button class="primary-button" style="margin-top: 20%!important;" id="phonebtn">Add Phone</button>
+                  </div>
+                </div>
+              </div>
+            
+    
+        </div>
+        
+        
+    </section>
