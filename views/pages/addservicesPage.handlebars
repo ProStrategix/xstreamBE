@@ -417,12 +417,20 @@
                     </p>
                     {{#if internet}}
                     <div class="speed-options">
-                        {{#each internet}}
-                      <button>
-                        <input type="radio" name="internet" id={{_id}}>
-                        {{Name}}
-                        <label for="plan1" class="plan-label">${{Price}}/mo</label>
-                      </button>
+                        {{#each internet.data}}
+                       {{#if thispurchased}}
+                        <button>
+                            <input type="radio" name="internet" checked class="internet-plans" id={{_id}}>
+                            {{Name}}
+                            <label for="plan1" class="plan-label">${{Price}}/mo</label>
+                        </button>
+                        {{else}}
+                        <button>
+                            <input type="radio" name="internet"  class="internet-plans" id={{_id}}>
+                            {{Name}}
+                            <label for="plan1" class="plan-label">${{Price}}/mo</label>
+                        </button>
+                        {{/if}}
                       {{/each}}
                       <!-- <button><input type="radio" name="internet" id="plan2">50 MB</button>
                       <button><input type="radio" name="internet" id="plan3">100 MB</button> -->
@@ -433,7 +441,12 @@
                       <li><input type="radio" name="internet" id="plan2"><label for="plan2">50 MB - $61.95/mo</label></li>
                       <li><input type="radio" name="internet" id="plan3"><label for="plan3">100 MB - $91.95/mo</label></li>
                     </ul> -->
-                    <button class="primary-button" id="internetbtn">Add Internet</button>
+                    {{#if internet.purchased}}
+                         <button class="primary-button" id="internetbtn">Remove Internet</button>
+                    {{else}}
+                       <button class="primary-button" id="internetbtn">Add Internet</button>
+                    {{/if}}
+                    
                   </div>
                 </div>
           
@@ -446,19 +459,32 @@
                     </p>
                     {{#if phone}}
                     <div class="speed-options">
-                        {{#each phone}}
+                        {{#each phone.data}}
+                        {{#if thispurchased}}
+                      <button>
+                        <input type="radio" checked name="phone" id={{_id}}>
+                        {{Name}}
+                        <label for="plan1" class="plan-label">${{Price}}/mo</label>
+                      </button>
+                      {{else}}
                       <button>
                         <input type="radio" name="phone" id={{_id}}>
                         {{Name}}
                         <label for="plan1" class="plan-label">${{Price}}/mo</label>
                       </button>
+                      {{/if}}
                       {{/each}}
                       <!-- <button><input type="radio" name="internet" id="plan2">50 MB</button>
                       <button><input type="radio" name="internet" id="plan3">100 MB</button> -->
                     </div>
                     {{/if}}
                     <!-- <img src="images/icons8-voip.svg" alt="Phone Icon" class="icon"> -->
-                    <button class="primary-button" style="margin-top: 20%!important;" id="phonebtn">Add Phone</button>
+                        {{#if phone.purchased}}
+                         <button class="primary-button" style="margin-top: 20%!important;" id="phonebtn">Remove Phone</button>
+                        {{else}}
+                       <button class="primary-button" style="margin-top: 20%!important;" id="phonebtn">Add Phone</button>
+                        {{/if}}
+                   
                   </div>
                 </div>
               </div>
