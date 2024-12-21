@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const { authorizeUser } = require('../data/authorized');
-const { getTv } = require('../data/item');
+const { getTv,getInternet,getPhone} = require('../data/item');
 const { getCart } = require('../data/cart');
 function checkMatch(data, id) {
   if (data.id === id) {
@@ -17,8 +17,10 @@ router.route('/').get(authorizeUser,async (req, res) => {
         
         try{
           const Tv = await getTv();
+          const Phone = await getPhone();
+          const Internet = await getInternet();
           const cartFetched = await getCart(req.user.AccountId);
-          // console.log(cartFetched);
+          // console.log(Internet);
 
           if(Tv.fetched){
             if(cartFetched.fetched){
@@ -40,6 +42,8 @@ router.route('/').get(authorizeUser,async (req, res) => {
               title:"Select Services",
               user:true,
               data:Tv,
+              phone:Phone.data,
+              internet:Internet.data,
               datacart:cartFetched
             });
             }
@@ -52,6 +56,8 @@ router.route('/').get(authorizeUser,async (req, res) => {
               title:"Select Services",
               user:true,
               data:Tv,
+              phone:Phone.data,
+              internet:Internet.data,
             });
             }
                 

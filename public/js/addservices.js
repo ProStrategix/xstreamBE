@@ -1,50 +1,4 @@
 
-// document.getElementById('basicplan').addEventListener('click', function () {
-//   // console.log("in");
-//     const featuresElement = document.querySelector('#subplans');
-//     const button = document.querySelector('#basicplan');
-//     if (featuresElement.style.display=='block') {
-      
-//           featuresElement.style.display = 'none';
-//           button.innerHTML  = 'Add Service';
-
-      
-//     } else {
-//       fetch('/cart', {
-//         method: 'POST', // Or GET, PUT, DELETE, etc.
-//         headers: {
-//           'Content-Type': 'application/json' // Adjust if necessary
-//         },
-//         body: JSON.stringify({itemId: '6757ca4504e91d63e43cdf1c'}) // If sending data
-//       })
-//       .then(response => {
-//         // Handle the response
-//         if (response.ok) {
-//           console.log(response.json()); // Parse JSON response
-//           featuresElement.style.display = 'block'; 
-//           button.innerHTML  = 'Remove Service';
-//         } else {
-//           throw new Error('Network response was not ok');
-//         }
-//       })
-//       .then(data => {
-//         // Do something with the data
-//         console.log(data);
-//       })
-//       .catch(error => {
-//         // Handle errors
-//         console.error('Error:', error);
-//         Swal.fire({
-//               icon: 'error',
-//               title: 'Cannot add to cart!',
-//               confirmButtonText: 'OK'
-//           });
-//       });
-    
-    
-//     }
-    
-// });
 
 document.getElementById('expandedplan').addEventListener('click', function () {
   const featuresElement = document.querySelector('#subplans');
@@ -559,8 +513,13 @@ document.addEventListener("DOMContentLoaded", function () {
   const spanish = document.getElementById('spanishbtn');
   const sports = document.getElementById('sportsbtn');
   const hbo = document.getElementById('hbobtn')
+  const button1 = document.getElementById('preferredplan');
+  const button2 = document.getElementById('expandedplan');
   const featuresElement = document.querySelector('#subplans');
   if(spanish.innerHTML==="Remove Spanish" || sports.innerHTML==="Remove Sports" || hbo.innerHTML==="Remove HBO"){
+    featuresElement.style.display = 'block';
+  }
+  if(button1.innerHTML==="Remove Plan" || button2.innerHTML==="Remove Plan"){
     featuresElement.style.display = 'block';
   }
 

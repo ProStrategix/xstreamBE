@@ -69,7 +69,45 @@ const getTv = async () => {
 
 };
 
+const getInternet = async () => { 
+  
+  let getitems = {fetched: false}
+  const itemCollection = await item();
+  const isItem = await itemCollection.find({Type:{ $regex: new RegExp('Internet', 'i')},CostCenter:{$regex: new RegExp('INTERNET', 'i')},Deprecated:"false"}).toArray();
+  if(isItem.length===0){
+    throw {statusCode: 400, message: 'There are no items!'};
+  }
+  isItem.forEach(element => {
+    element._id = element._id.toString();
 
+  })
+  getitems.data=isItem;
+//   console.log(getitems);
+  getitems.fetched = true;
+  return getitems;
+
+
+
+};
+const getPhone = async () => { 
+  
+  let getitems = {fetched: false}
+  const itemCollection = await item();
+  const isItem = await itemCollection.find({Type:{ $regex: new RegExp('Voip', 'i')},CostCenter:{$regex: new RegExp('VOIP', 'i')},Deprecated:"false"}).toArray();
+  if(isItem.length===0){
+    throw {statusCode: 400, message: 'There are no items!'};
+  }
+  
+  getitems.data=isItem;
+//   console.log(getitems);
+  getitems.fetched = true;
+  return getitems;
+
+
+
+};
 module.exports = {
     getTv,
+    getInternet,
+    getPhone
 };
