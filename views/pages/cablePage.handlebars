@@ -86,21 +86,21 @@
                 <p>No Contracts. Simple Pricing. Customize with Upgrades.</p>
             </div>
             
-            
+            {{#if data}}
             <div class="pricing-container">
-
+                {{#if data.basic}}
                 <div class="pricing-column-wrapper style3">
                     <div class="pricing-column style3">
                         <div class="pricing-price-row style3">
                         <div class="pricing-price-wrapper style3">
                             <div class="pricing-price style3">
-                            <div class="pricing-cost style3">$59.95</div>
+                            <div class="pricing-cost style3">${{data.basic.Price}}</div>
                             <div class="time" style="display:inline-block;">Per Month</div>
                             </div>
                         </div>
                         </div>
                         <div class="pricing-row-title style3">
-                        <div class="pricing_row_title style3">OP Basic</div>
+                        <div class="pricing_row_title style3">{{data.basic.Name}}</div>
                         </div>
                         <div class="logo-carousel style3">
                             <div class="logo-track-op-basic style3">
@@ -119,7 +119,7 @@
                         <figure class="pricing-row">87 channels</figure>
                         <figure class="pricing-row">Dedicated Support</figure>
                         <figure class="pricing-row">Mobile App</figure>
-                        <figure class="pricing-row strike">DVR Not Included</figure>
+                        {{!-- <figure class="pricing-row strike">DVR Not Included</figure> --}}
                         <div class="pricing-footer style3">
                         <div class="gem-button-container gem-button-position-center style3">
                             <a href="/compareplans" class="gem-button gem-orange style3">Compare Plans</a>
@@ -128,21 +128,21 @@
                         </div>
                     </div>
                 </div>
-                
+                {{/if}}
 
-
+                {{#if data.choice}}
                 <div class="pricing-column-wrapper">
                     <div class="pricing-column">
                         <div class="pricing-price-row">
                         <div class="pricing-price-wrapper">
                             <div class="pricing-price">
-                            <div class="pricing-cost">$59.95</div>
+                            <div class="pricing-cost">${{data.choice.Price}}</div>
                             <div class="time" style="display:inline-block;">Per Month</div>
                             </div>
                         </div>
                         </div>
                         <div class="pricing-row-title">
-                        <div class="pricing_row_title">Choice</div>
+                        <div class="pricing_row_title">{{data.choice.Name}}</div>
                         </div>
                         <div class="logo-carousel3">
                             <div class="logo-track-choice">
@@ -161,7 +161,7 @@
                         <figure class="pricing-row">Additional 56 channels</figure>
                         <figure class="pricing-row">Dedicated Support</figure>
                         <figure class="pricing-row">Mobile App</figure>
-                        <figure class="pricing-row strike">DVR Not Included</figure>
+                        {{!-- <figure class="pricing-row strike">DVR Not Included</figure> --}}
                         <div class="pricing-footer">
                         <div class="gem-button-container gem-button-position-center">
                             <a href="/compareplans" class="gem-button gem-orange">Compare Plans</a>
@@ -170,20 +170,20 @@
                         </div>
                     </div>
                 </div>
-              
-            
+              {{/if}}
+            {{#if data.preferred}}
                 <div class="pricing-column-wrapper style2">
                     <div class="pricing-column style2">
                         <!-- <div class="pricing-price-row"> -->
                         <div class="pricing-price-wrapper style2">
                             <div class="pricing-price style2">
-                            <div class="pricing-cost style2">$79.95</div>
+                            <div class="pricing-cost style2">${{data.preferred.Price}}</div>
                             <div class="time style2" style="display:inline-block;">Per Month</div>
                             </div>
                         </div>
                         <!-- </div> -->
                         <div class="pricing-row-title style2">
-                        <div class="pricing_row_title style2">Preferred</div>
+                        <div class="pricing_row_title style2">{{data.preferred.Name}}</div>
                         </div>
                         <!-- Scrollable logo carousel with dots -->
                         <div class="logo-carousel2">
@@ -202,7 +202,7 @@
 
                         <figure class="pricing-row style2">Additional 68 channels</figure>
                         <figure class="pricing-row style2">Dedicated Support</figure>
-                        <figure class="pricing-row style2">25 hours of Cloud DVR</figure>
+                        {{!-- <figure class="pricing-row style2">25 hours of Cloud DVR</figure> --}}
                         <figure class="pricing-row style2">Mobile App</figure>
                         <!-- <div class="pricing-footer"> -->
                         <div class="gem-button-position-center style2">
@@ -212,19 +212,20 @@
                         <!-- </div> -->
                     </div>
                 </div>
-
+                {{/if}}
+                {{#if data.expanded}}
                 <div class="pricing-column-wrapper style2">
                     <div class="pricing-column style2" >
                         <div class="pricing-price-row style2">
                         <div class="pricing-price-wrapper style2">
                             <div class="pricing-price style2">
-                            <div class="pricing-cost">$59.95</div>
+                            <div class="pricing-cost">${{data.expanded.Price}}</div>
                             <div class="time" style="display:inline-block;">Per Month</div>
                             </div>
                         </div>
                         </div>
                         <div class="pricing-row-title style2">
-                        <div class="pricing_row_title style2">Expanded</div>
+                        <div class="pricing_row_title style2">{{data.expanded.Name}}</div>
                         </div>
                         <div class="logo-carousel4">
                             <div class="logo-track-expanded">
@@ -243,7 +244,7 @@
                         <figure class="pricing-row  style2">41 channels</figure>
                         <figure class="pricing-row style2">Dedicated Support</figure>
                         <figure class="pricing-row style2">Mobile App</figure>
-                        <figure class="pricing-row strike">DVR Not Included</figure>
+                        {{!-- <figure class="pricing-row strike">DVR Not Included</figure> --}}
                         <div class="pricing-footer">
                         <div class="gem-button-container gem-button-position-center style2">
                             <a href="/compareplans" class="gem-button gem-orange style2">Compare Plans</a>
@@ -252,11 +253,12 @@
                         </div>
                     </div>
                 </div>
-               
+               {{/if}}
+            
 
 
             </div>
-                
+              {{/if}}  
 
         </div>
         
@@ -271,6 +273,7 @@
                 <p>Access to these upgrades requires a Preferred subscription.  
                     These member can select one or more options based on their interests.</p>
             </div>
+            {{#if data}}
             <div class="gradient-cards2">
 
             <!-- <article class="plan [ card-plan ] Extended">
@@ -328,16 +331,16 @@
                     </button>
                 </div>
             </article> -->
-
+{{#if data.sports}}
             <article class="plan [ card-plan ] Sports">
                 <div class="inner">
         
                     <span class="pricing Sports">
                         <span>
-                            +$9.95 <small>/ m</small>
+                            +${{data.sports.Price}}  <small>/ m</small>
                         </span>
                     </span>
-                    <h2 class="title">Sports</h2>
+                    <h2 class="title">Spo{{data.sports.Name}} rts</h2>
                     <p class="info">This is the upgrade plan for those who have a preferred plan already running.</p>
                     <ul class="features">
                         <li>
@@ -366,7 +369,7 @@
                                         <path d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z" fill="currentColor" />
                                     </svg>
                                 </span> -->
-                                <span class="strike">No additional DVR hrs. beyond Basic</span>
+                                {{!-- <span class="strike">No additional DVR hrs. beyond Basic</span> --}}
                         </li>
                         <li>
                             <span class="icon">
@@ -383,17 +386,17 @@
                     </button>
                 </div>
             </article>
-
-
+{{/if}}
+{{#if data.hbo}}
             <article class="plan [ card-plan ] HBO">
                 <div class="inner">
         
                     <span class="pricing HBO">
                         <span>
-                            +$16.95 <small>/ m</small>
+                            +${{data.hbo.Price}} <small>/ m</small>
                         </span>
                     </span>
-                    <h2 class="title">HBO</h2>
+                    <h2 class="title">{{data.hbo.Name}}</h2>
                     <p class="info">This is the upgrade plan for those who have a preferred plan already running.</p>
                     <ul class="features">
                         <li>
@@ -422,7 +425,7 @@
                                         <path d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z" fill="currentColor" />
                                     </svg>
                                 </span> -->
-                                <span class="strike">No additional DVR hrs. beyond Basic</span>
+                                {{!-- <span class="strike">No additional DVR hrs. beyond Basic</span> --}}
                         </li>
                         <li>
                             <span class="icon">
@@ -439,16 +442,17 @@
                     </button>
                 </div>
             </article>
-
+        {{/if}}
+        {{#if data.spanish}}
             <article class="plan [ card-plan ] Cinemax">
                 <div class="inner">
         
                     <span class="pricing Cinemax">
                         <span>
-                            +$12.95 <small>/ m</small>
+                            +${{data.spanish.Price}} <small>/ m</small>
                         </span>
                     </span>
-                    <h2 class="title">Spanish</h2>
+                    <h2 class="title">{{data.spanish.Name}}</h2>
                     <p class="info">This is the upgrade plan for those who have a preferred plan already running.</p>
                     <ul class="features">
                         <li>
@@ -477,7 +481,7 @@
                                         <path d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z" fill="currentColor" />
                                     </svg>
                                 </span> -->
-                                <span class="strike">No additional DVR hrs. beyond Basic</span>
+                                {{!-- <span class="strike">No additional DVR hrs. beyond Basic</span> --}}
                         </li>
                         <li>
                             <span class="icon">
@@ -494,10 +498,10 @@
                     </button>
                 </div>
             </article>
-
-
+            {{/if}}
+ 
         </div>    
-    
+        {{/if}}
         </div>
         
         

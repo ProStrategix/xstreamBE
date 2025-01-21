@@ -5,15 +5,15 @@
             <div class="stepper-wrapper">
                 <div class="stepper-item completed">
                   <div class="step-counter">1</div>
-                  <div class="step-name" onclick="location.href='getstarted.html';">Sign In / Register</div>
+                  <div class="step-name">Sign In / Register</div>
                 </div>
                 <div class="stepper-item active">
                   <div class="step-counter">2</div>
-                  <div class="step-name" onclick="location.href='addservices.html';">Select Services</div>
+                  <div class="step-name">Select Services</div>
                 </div>
                 <div class="stepper-item">
                   <div class="step-counter">3</div>
-                  <div class="step-name" onclick="location.href='payment-checkout.html';">Checkout</div>
+                  <div class="step-name" onclick="#">Checkout</div>
                 </div>
             </div>
             {{!-- {{#if hasErrors}}
@@ -52,7 +52,7 @@
                         <figure class="pricing-row">87 channels</figure>
                         <figure class="pricing-row">Dedicated Support</figure>
                         <figure class="pricing-row">Mobile App</figure>
-                        <figure class="pricing-row strike">DVR Not Included</figure>
+                        {{!-- <figure class="pricing-row strike">DVR Not Included</figure> --}}
                         <div class="pricing-footer">
                         <div class="gem-button-container gem-button-position-center style3">
                             {{#if data.basic.purchased}}
@@ -97,7 +97,7 @@
                         <figure class="pricing-row">Additional 56 channels</figure>
                         <figure class="pricing-row">Dedicated Support</figure>
                         <figure class="pricing-row">Mobile App</figure>
-                        <figure class="pricing-row strike">DVR Not Included</figure>
+                        {{!-- <figure class="pricing-row strike">DVR Not Included</figure> --}}
                         <div class="pricing-footer">
                         <div class="gem-button-container gem-button-position-center">
                             {{#if data.choice.purchased}}
@@ -142,7 +142,7 @@
 
                         <figure class="pricing-row style2">Additional 68 channels</figure>
                         <figure class="pricing-row style2">Dedicated Support</figure>
-                        <figure class="pricing-row style2">25 hours of Cloud DVR</figure>
+                        {{!-- <figure class="pricing-row style2">25 hours of Cloud DVR</figure> --}}
                         <figure class="pricing-row style2">Mobile App</figure>
                         <!-- <div class="pricing-footer"> -->
                         <div class="gem-button-position-center style2">
@@ -187,7 +187,7 @@
                         <figure class="pricing-row  style2">41 channels</figure>
                         <figure class="pricing-row style2">Dedicated Support</figure>
                         <figure class="pricing-row style2">Mobile App</figure>
-                        <figure class="pricing-row strike">DVR Not Included</figure>
+                        {{!-- <figure class="pricing-row strike">DVR Not Included</figure> --}}
                         <div class="pricing-footer">
                         <div class="gem-button-container gem-button-position-center style2">
                            {{#if data.expanded.purchased}}
@@ -255,7 +255,7 @@
                                       <path d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z" fill="currentColor" />
                                   </svg>
                               </span> -->
-                              <span class="strike">No additional DVR hrs. beyond Basic</span>
+                              {{!-- <span class="strike">No additional DVR hrs. beyond Basic</span> --}}
                       </li>
                       <li>
                           <span class="icon">
@@ -313,7 +313,7 @@
                                       <path d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z" fill="currentColor" />
                                   </svg>
                               </span> -->
-                              <span class="strike">No additional DVR hrs. beyond Basic</span>
+                              {{!-- <span class="strike">No additional DVR hrs. beyond Basic</span> --}}
                       </li>
                       <li>
                           <span class="icon">
@@ -371,7 +371,7 @@
                                       <path d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z" fill="currentColor" />
                                   </svg>
                               </span> -->
-                              <span class="strike">No additional DVR hrs. beyond Basic</span>
+                              {{!-- <span class="strike">No additional DVR hrs. beyond Basic</span> --}}
                       </li>
                       <li class="sub-li">
                           <span class="icon">
@@ -415,31 +415,38 @@
                     <p>
                       Our lightweight technology makes the most of every MB. Choose from flexible internet plans that suit your needs!
                     </p>
+                    {{#if internet}}
                     <div class="speed-options">
-                      <button>
-                        <input type="radio" name="internet" id="plan1">
-                        25 MB
-                        <label for="plan1" class="plan-label">$41.95/mo</label>
-                      </button>
-                      <button>
-                        <input type="radio" name="internet" id="plan2">
-                        50 MB
-                        <label for="plan1" class="plan-label">$61.95/mo</label>
-                      </button>
-                      <button>
-                        <input type="radio" name="internet" id="plan2">
-                        100 MB
-                        <label for="plan1" class="plan-label">$91.95/mo</label>
-                      </button>
+                        {{#each internet.data}}
+                       {{#if thispurchased}}
+                        <button>
+                            <input type="radio" name="internet" checked class="internet-plans" id={{_id}}>
+                            {{Name}}
+                            <label for="plan1" class="plan-label">${{Price}}/mo</label>
+                        </button>
+                        {{else}}
+                        <button>
+                            <input type="radio" name="internet"  class="internet-plans" id={{_id}}>
+                            {{Name}}
+                            <label for="plan1" class="plan-label">${{Price}}/mo</label>
+                        </button>
+                        {{/if}}
+                      {{/each}}
                       <!-- <button><input type="radio" name="internet" id="plan2">50 MB</button>
                       <button><input type="radio" name="internet" id="plan3">100 MB</button> -->
                     </div>
+                    {{/if}}
                     <!-- <ul class="price-options">
                       <li><input type="radio" name="internet" id="plan1"><label for="plan1">25 MB - $41.95/mo</label></li>
                       <li><input type="radio" name="internet" id="plan2"><label for="plan2">50 MB - $61.95/mo</label></li>
                       <li><input type="radio" name="internet" id="plan3"><label for="plan3">100 MB - $91.95/mo</label></li>
                     </ul> -->
-                    <button class="primary-button" id="internetbtn">Add Internet</button>
+                    {{#if internet.purchased}}
+                         <button class="primary-button" id="internetbtn">Remove Internet</button>
+                    {{else}}
+                       <button class="primary-button" id="internetbtn">Add Internet</button>
+                    {{/if}}
+                    
                   </div>
                 </div>
           
@@ -448,10 +455,36 @@
                   <h3 class="card-title">Add Crystal-Clear Calls</h3>
                   <div class="card-content">
                     <p>
-                      Add a phone line for only <span style="color: #ffa039;">$29.99/mo.</span> Includes free calls to the US, Canada, and Puerto Rico.
+                      Add a phone line. Includes free calls to the US, Canada, and Puerto Rico.
                     </p>
+                    {{#if phone}}
+                    <div class="speed-options">
+                        {{#each phone.data}}
+                        {{#if thispurchased}}
+                      <button>
+                        <input type="radio" checked name="phone" id={{_id}}>
+                        {{Name}}
+                        <label for="plan1" class="plan-label">${{Price}}/mo</label>
+                      </button>
+                      {{else}}
+                      <button>
+                        <input type="radio" name="phone" id={{_id}}>
+                        {{Name}}
+                        <label for="plan1" class="plan-label">${{Price}}/mo</label>
+                      </button>
+                      {{/if}}
+                      {{/each}}
+                      <!-- <button><input type="radio" name="internet" id="plan2">50 MB</button>
+                      <button><input type="radio" name="internet" id="plan3">100 MB</button> -->
+                    </div>
+                    {{/if}}
                     <!-- <img src="images/icons8-voip.svg" alt="Phone Icon" class="icon"> -->
-                    <button class="primary-button" style="margin-top: 20%!important;" id="phonebtn">Add Phone</button>
+                        {{#if phone.purchased}}
+                         <button class="primary-button" style="margin-top: 20%!important;" id="phonebtn">Remove Phone</button>
+                        {{else}}
+                       <button class="primary-button" style="margin-top: 20%!important;" id="phonebtn">Add Phone</button>
+                        {{/if}}
+                   
                   </div>
                 </div>
               </div>
