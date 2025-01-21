@@ -4,6 +4,31 @@ const router = express.Router();
 const helper = require('../helper');
 const { createUser,checkUser } = require('../data/auth');
 const { authorizeUser } = require('../data/authorized');
+const sanitizeHtml = require('sanitize-html');
+
+// Middleware to sanitize all input fields
+const sanitizeInputs = (req, res, next) => {
+    const sanitizeObject = (obj) => {
+        for (const key in obj) {
+            if (typeof obj[key] === 'string') {
+                obj[key] = sanitizeHtml(obj[key], {
+                    allowedTags: [], // No HTML tags allowed
+                    allowedAttributes: {},
+                });
+            } else if (typeof obj[key] === 'object' && obj[key] !== null) {
+                sanitizeObject(obj[key]); // Recursively sanitize nested objects
+            }
+        }
+    };
+
+    sanitizeObject(req.body); // Sanitize request body
+    sanitizeObject(req.query); // Sanitize query parameters
+    sanitizeObject(req.params); // Sanitize route parameters
+
+    next();
+};
+
+router.use(sanitizeInputs);
 
 router.route('/').get(authorizeUser,async (req, res) => {
   console.log(req.user);
