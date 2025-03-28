@@ -101,7 +101,8 @@ text-transform: uppercase;
   font-weight: bold;
   letter-spacing: 1px;
   text-align: center; 
-  color: #605d5d;
+  /* color: #605d5d; */
+  color: #fff;
   margin-bottom: 10px;
 }
 .service{
@@ -310,6 +311,7 @@ text-transform: uppercase;
   color: #fff;
   font-weight: 600;
   line-height: 60px;
+  
 }
 
 .card {
@@ -317,10 +319,35 @@ text-transform: uppercase;
   border: 0;
   width: 100%;
   margin-inline: auto;
+  position: relative;
+  overflow: hidden;
+
 }
+.sub-cards-item_bg2 {
+  height: 128px;
+  width: 128px;
+  background-color: #ffa039;
+  /* background-color: #ffbd39; */
+  z-index: 1;
+  position: absolute;
+  top: -75px;
+  right: -75px;
+
+  border-radius: 50%;
+
+  -webkit-transition: all .5s ease;
+  -o-transition: all .5s ease;
+  transition: all .5s ease;
+}
+
 .card:hover{
   box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.4);
   transform: scale(1.11);
+}
+.card:hover .sub-cards-item_bg2{
+  -webkit-transform: scale(3);
+  -ms-transform: scale(3);
+  transform: scale(3);
 }
 .container-card {
   position: relative;
@@ -366,6 +393,8 @@ text-transform: uppercase;
   font-style: normal;
   font-size: 32px;
   padding-bottom: 8px;
+  z-index: 2;
+  position: relative;
 }
 
 .card-description {
@@ -374,8 +403,42 @@ text-transform: uppercase;
   color: hsla(0, 0%, 100%, 0.5);
   font-size: 20px;
   max-width: 470px;
+  max-height: 200px; /* Initial height for collapsed state */
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+  z-index: 2;
+  position: relative;
+}
+.card-description.expanded {
+  max-height: 400px; /* Expanded height */
+  overflow-y: auto; /* Enable scroll if content exceeds expanded height */
+}
+.read-more-btn {
+  /* margin-top: 15%; */
+  background-color: #ffa039;
+  color: white;
+  border: none;
+  /* padding: 8px 16px; */
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  cursor: pointer;
+  height: 20px;
+  /* line-height: 40px; */
+  padding: 0 17px;
+  font-size: 10px;
+  /* font-weight: 700; */
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+  text-transform: uppercase;
+  white-space: nowrap;
+  vertical-align: middle;
 }
 
+.read-more-btn:hover {
+  background-color: #2b2b2c;
+}
 
 @media screen and (max-width: 1152px) {
   .gradient-cards {
@@ -559,14 +622,31 @@ display: block;
   text-align: left;
   font-size: 22px;
 }
-
-.pricing-row:before {
+.pricing-row::before {
+  content: "✔"; /* Unicode checkmark */
+  font-size: 16px;
+  color: #00bfa5;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+/* .pricing-row:before {
   vertical-align: middle;
  content: "\f058";
   font-family: "Font Awesome 5 Free";
   color: #00bfa5;
   text-align: center;
   padding-right: 10px;
+} */
+.pricing-empty::before {
+  content: "✖"; /* Unicode cross (X) mark */
+  font-size: 16px;
+  color: #080509;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+.pricing-empty
+{
+border-top: 1px solid #7273723b;
 }
 
 .strike:before
@@ -787,7 +867,8 @@ overflow:hidden;
 .card-plan{
   border-radius: 16px;
   box-shadow: 0 30px 30px -25px rgba(65, 51, 183, 0.25);
-  max-width: 300px;
+  max-width: 350px;
+ 
 }
 
 .plan.Extended{
@@ -843,9 +924,34 @@ overflow:hidden;
   background: linear-gradient(71deg, #080509, #1a171c, #080509);
   border-radius: 12px;
   position: relative;
-  height: 470px;
+  overflow: hidden;
+  height: 570px;
 }
+.sub-cards-item_bg1 {
+  height: 128px;
+  width: 128px;
+  background-color: #069bd9;
+  z-index: 1;
+  position: absolute;
+  top: -75px;
+  right: -75px;
 
+  border-radius: 50%;
+
+  -webkit-transition: all .5s ease;
+  -o-transition: all .5s ease;
+  transition: all .5s ease;
+}
+.sub-cards-item_bg1  span{
+  position: relative;
+  top: 85px;
+  right: -10px;
+}
+.plan .inner:hover .sub-cards-item_bg1 {
+  -webkit-transform: scale(3);
+  -ms-transform: scale(3);
+  transform: scale(3);
+}
 .plan .pricing {
   position: absolute;
   top: 0;
@@ -855,7 +961,7 @@ overflow:hidden;
   display: flex;
   align-items: center;
   padding: 0.625em 0.75em;
-  font-size: 1.25rem;
+  font-size: 0.55rem;
   font-weight: 600;
   color: #fff;
 }
@@ -930,6 +1036,7 @@ overflow:hidden;
   .gradient-cards2{
       grid-template-columns: repeat(2, 1fr);
       padding-left: 15%;
+      justify-content: center;
     }
  
 }
@@ -937,14 +1044,31 @@ overflow:hidden;
 
   .gradient-cards2{
       grid-template-columns: repeat(2, 1fr);
-      padding-left: 8%;
+      width: 100%;
+      justify-content: center;
+    }
+    .plan .inner{
+      width: 100%;
+      height: auto;
+    }
+    .card-plan{
+      width: 100%; 
     }
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 950px) {
 
   .gradient-cards2{
       grid-template-columns: 1fr;
-      padding-left: 15%;
+      width: 100%;
+      height: auto;
+      justify-content: center;
+    }
+    .plan .inner{
+      height: auto;
+      width: 100%;
+    }
+    .card-plan{
+      width: 100%; 
     }
 }
 
@@ -1579,19 +1703,19 @@ top: 0;
 .slide-track{
 display: flex;
 width: calc(200%); /* Double the width to account for duplicate slides */
-animation: scroll-right 34s linear infinite;
+animation: scroll-right 18s linear infinite;
  
 }
 .slide-track2{
 display: flex;
 width: calc(200%); /* Double the width to account for duplicate slides */
-animation: scroll-left 34s linear infinite;
+animation: scroll-left 10s linear infinite;
  
 }
 .slide-track3 {
 display: flex;
 width: calc(200%); /* Double the width to account for duplicate slides */
-animation: scroll-right 34s linear infinite;
+animation: scroll-right 30s linear infinite;
  
 }
 
@@ -1622,4 +1746,19 @@ from {
 to {
     transform: translateX(0);
 }
+}
+.icon-chevron-left {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  background: url('https://fonts.gstatic.com/s/i/materialicons/chevron_left/v14/24px.svg') no-repeat center center;
+  background-size: contain;
+}
+
+.icon-chevron-right {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  background: url('https://fonts.gstatic.com/s/i/materialicons/chevron_right/v14/24px.svg') no-repeat center center;
+  background-size: contain;
 }
