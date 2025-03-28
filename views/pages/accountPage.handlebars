@@ -1,0 +1,108 @@
+
+    <section class="features" data-aos="fade-down" data-aos-delay="200" data-aos-duration="900">
+        <div class="main-feature" >
+            <div class="heading-container">
+                <h1>Account <span style="color: #ffa039;">History</span></h1>
+                <p><span style="color: #ffa039;">Please note.</span> Only Preferred subscribers have the option to upgrade their package with one or more of our ADD-ON Tiers. 
+                    This is not available to our OP Basic or Choice subscribers.</p>
+            </div>
+
+            <!-- <div class="container"> -->
+                <div class="profile-wrapper">
+                    <!-- Left Section: Profile Info -->
+                    <div class="profile-left">
+                        
+                        <img src="../public/images/Family-Phone.jpg" alt="Profile Picture">
+                        {{#if data.userDetails}}
+                        <h2>{{data.userDetails.FirstName}} {{data.userDetails.LastName}}</h2>
+                        <p>{{data.userDetails.Email}}</p>
+                        {{/if}}
+                        <button onclick="openEditProfileModal()">Edit Profile</button>
+                        {{!-- <button id="schedule-btn">Schedule Call</button> --}}
+                        
+                      
+                    </div>
+                    
+                    <!-- Right Section: Bio and Active Services -->
+                    <div class="profile-right">
+                        <div class="bio">
+                            <h3>About Me</h3>
+                            {{#if data.userDetails}}
+                            <div><strong>Full Name:</strong> {{data.userDetails.FirstName}} {{data.userDetails.LastName}}</div>
+                            <div><strong>Email:</strong> {{data.userDetails.Email}}</div>
+                            <div><strong>Service Address:</strong> {{data.userDetails.location}}</div>
+                            <div><strong>Current Address:</strong> {{data.userDetails.Address}}</div>
+                            {{/if}}
+                            {{!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras tincidunt, justo eget ultrices accumsan, purus eros tristique elit, at consectetur ligula eros a nisl.</p> --}}
+                        </div>
+            
+                        <!-- Active Services Section -->
+                        <div class="services">
+                            {{#if data.plans}}
+                            <h3>Active Services</h3>
+                            
+                            <div class="service-cards-container">
+                                {{#each data.plans}}
+                                <div class="service-card">
+                                    <h4>{{Name}}</h4>
+                                    <p>Start: {{startDate}}</p>
+                                    <p>Deadline: {{endDate}}</p>
+                                    {{!-- <button onclick="openServiceModal()">Modify Service</button> --}}
+                                    <button onclick="endService('{{Name}}','{{_id}}','{{endDate}}')" value={{_id}}>End Service</button>
+                                </div>
+                                {{/each}}
+                            </div>
+                            {{/if}}
+                        </div>
+
+                        <!-- Additional Services Section -->
+                        <div class="services">
+                            <h3>Additional Services</h3>
+                                    <button  class="add-service-card" onclick="location.href='/cable';">Cable Service</button>  
+                                    <button  class="add-service-card" onclick="location.href='/phone';">Phone Service</button>                               
+                                    <button  class="add-service-card" onclick="location.href='/internet';">Internet Service</button>
+                                
+                        </div>
+            
+
+
+
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Edit Profile Modal -->
+            <div id="editProfileModal" class="modal">
+                <div class="modal-content">
+                    <button class="close-btn" onclick="closeEditProfileModal()">×</button>
+                    <h3>Edit Profile</h3>
+                    <form id="editProfileForm" >
+                        {{#if data.userDetails}}
+                        <input type="text" id="firstName" placeholder="First Name" required value={{data.userDetails.FirstName}}>
+                        <input type="text" id="lastName" placeholder="Last Name" required value={{data.userDetails.LastName}}>
+                        <input type="email" id="email" placeholder="Email" required value={{data.userDetails.Email}}>
+                        <input type="textarea" id="address" placeholder="Current Address" required value="{{data.userDetails.Address}}">
+                        <button type="submit">Save Changes</button>
+                        {{/if}}
+                    </form>
+                </div>
+            </div>
+            
+            <!-- Service Modal -->
+            <div id="serviceModal" class="modal">
+                <div class="modal-content">
+                    <button class="close-btn" onclick="closeServiceModal()">×</button>
+                    <h3>Modify Service</h3>
+                    <form id="serviceForm">
+                        <input type="text" id="serviceName" placeholder="Service Name" required>
+                        <input type="date" id="serviceStart" placeholder="Start Date" required>
+                        <input type="date" id="serviceEnd" placeholder="End Date" required>
+                        <button type="submit">Update Service</button>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </section>
+      
+    
